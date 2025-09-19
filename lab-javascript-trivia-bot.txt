@@ -1,0 +1,34 @@
+** start of script.js **
+
+//Greetings!
+console.log("Hello! I'm your coding fun fact guide!");
+
+// Declarations
+let botName = "Botty";
+let botLocation = "The USG Ishimura";
+let favoriteLanguage = "The Red Marker";
+
+//IntroMSGs
+const botNameAndLocation = "My name is " + botName + " and I live on " + botLocation + ".";
+console.log(botNameAndLocation);
+
+const botFavoriteProgrammingLanguage = "My favorite programming language is " + favoriteLanguage + ".";
+console.log(botFavoriteProgrammingLanguage);
+
+// First coding fact
+let codingFact = "Just like " + favoriteLanguage + ", the ultimate goal of every Marker is 'Convergence' - gathering enough biomass to create a planet-sized flesh moon called a Brethren Moon that travels through space infecting other worlds.";
+console.log(codingFact);
+
+// Second coding fact (first reassignment)
+codingFact = "Programming with " + favoriteLanguage + " is like following a Marker's signal - it compels you to make us whole through code!";
+console.log(codingFact);
+
+// Third coding fact (second reassignment)
+codingFact = favoriteLanguage + " teaches us that the ultimate goal is 'Convergence' - gathering enough biomass to create a planet-sized flesh moon and, at last, turn into that creepy creature by the name of a Senior Bug Maker!";
+console.log(codingFact);
+
+//OutroMSG
+console.log("It was fun sharing these facts with you. Goodbye! - " + botName + " from " + botLocation + ".");
+
+** end of script.js **
+
