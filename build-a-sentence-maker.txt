@@ -1,0 +1,36 @@
+** start of script.js **
+
+//declarations
+let adjective;
+let noun;
+let verb;
+let place;
+let adjective2;
+let noun2;
+
+//Assignments for the 1st story
+adjective = "AdjectiveForThe1stStory";
+noun = "NounForThe1stStory";
+verb = "verbForThe1stStory";
+place = "PlaceForThe1stStory";
+adjective2 = "AdjectiveForThe1stStory";
+noun2 = "NounForThe1stStory";
+
+//The 1st story
+const firstStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place + " and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";
+console.log("First story: " + firstStory);
+
+//Reassignments for the 2nd story
+adjective = "AdjectiveFroThe2ndStory";
+noun = "NounFroThe2ndStory";
+verb = "verbFroThe2ndStory";
+place = "PlaceFroThe2ndStory";
+adjective2 = "AdjectiveFroThe2ndStory";
+noun2 = "NounFroThe2ndStory";
+
+//The 2nd story
+const secondStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place + " and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";
+console.log("Second story: " + secondStory);
+
+** end of script.js **
+
