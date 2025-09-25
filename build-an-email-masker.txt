@@ -1,0 +1,18 @@
+** start of script.js **
+
+let email = "test@example.com";
+
+function maskEmail(email) {
+//indexOf and slice methods
+const atIndex = email.indexOf('@');
+const username = email.slice(0, atIndex);
+const domain = email.slice(atIndex);
+
+//assembling everything together
+return username[0] +  '*'.repeat(username.length - 2) + username.slice(-1) + domain;
+}
+
+console.log(maskEmail(email));
+
+** end of script.js **
+
