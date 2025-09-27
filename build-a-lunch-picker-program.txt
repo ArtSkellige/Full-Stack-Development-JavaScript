@@ -1,0 +1,63 @@
+** start of script.js **
+
+const lunches = [];
+
+//You should create a function addLunchToEnd that takes an array as the first argument and a string as the second argument. The function should:
+function addLunchToEnd(P1ALTE, P2ALTE) {
+  P1ALTE.push(P2ALTE);
+  console.log(`${P2ALTE} added to the end of the lunch menu.`);
+  return P1ALTE;  
+}
+
+//You should create a function addLunchToStart that takes an array as the first argument and a string as the second argument. The function should:
+function addLunchToStart(P1ALTS, P2ALTS) {
+  P1ALTS.unshift(P2ALTS);
+  console.log(`${P2ALTS} added to the start of the lunch menu.`);
+  return P1ALTS;
+}
+
+//You should create a function removeLastLunch that takes an array as its argument. The function should:
+function removeLastLunch(P1RLL) {
+  if (P1RLL.length === 0) {
+    console.log("No lunches to remove.");
+    return;  
+  } 
+  const removedItem = P1RLL.pop();
+  console.log(`${removedItem} removed from the end of the lunch menu.`);
+  return P1RLL;
+}
+
+//You should create a function removeFirstLunch that takes an array as its argument. The function should:
+function removeFirstLunch(P1RFL) {
+ if (P1RFL.length === 0) {
+   console.log("No lunches to remove.");
+   return;
+  }
+  const removedItem = P1RFL.shift();
+  console.log(`${removedItem} removed from the start of the lunch menu.`);
+  return P1RFL;
+}
+
+//You should create a function getRandomLunch that takes an array as its argument. The function should:
+function getRandomLunch(P1GRL) {
+  if (P1GRL.length === 0) {
+    console.log("No lunches available.");
+    return;
+  }
+  const randomIndex = Math.floor(Math.random() * P1GRL.length);
+  const randomItem = P1GRL[randomIndex];
+  console.log("Randomly selected lunch: " + randomItem);
+  return;
+}
+
+//You should create a function showLunchMenu that takes an array as its argument and:
+function showLunchMenu(P1SLM) {
+  if (P1SLM.length === 0) {
+    console.log("The menu is empty.");
+    return;
+  }
+  console.log(`Menu items: ${P1SLM.join(", ")}`);
+}
+
+** end of script.js **
+
