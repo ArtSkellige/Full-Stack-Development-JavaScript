@@ -1,0 +1,12 @@
+** start of script.js **
+
+function reverseString(str1) {
+  return str1.split('').reverse().join('');
+}
+
+const nonReversed = "Hello";
+const reversed = reverseString(nonReversed);
+console.log(reversed);
+
+** end of script.js **
+
