@@ -1,0 +1,59 @@
+** start of script.js **
+
+//The questions array should contain at least five objects
+const questions = [
+  {
+    category: "Science",
+    question: "What is the chemical symbol for gold?",
+    choices: ["Au", "Ag", "Fe"],
+    answer: "Au"
+  },
+  {
+    category: "Geography",
+    question: "What is the capital of France?",
+    choices: ["London", "Paris", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    category: "History",
+    question: "In what year did World War II end?",
+    choices: ["1943", "1945", "1947"],
+    answer: "1945"
+  },
+  {
+    category: "Technology",
+    question: "What does HTML stand for?",
+    choices: ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language"],
+    answer: "HyperText Markup Language"
+  },
+  {
+    category: "Sports",
+    question: "How many players are on a soccer team on the field?",
+    choices: ["9", "10", "11"],
+    answer: "11"
+  }
+];
+
+//Random question
+function getRandomQuestion(questionsArray) {
+  const randomIndex = Math.floor(Math.random() * questionsArray.length);
+  return questionsArray[randomIndex];
+}
+
+//Random choices
+function getRandomComputerChoice(choices) {
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+}
+
+//Results logic
+function getResults(questionObject, computerChoice) {
+  if (computerChoice === questionObject.answer){
+    return "The computer's choice is correct!"
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${questionObject.answer}`;
+  }
+}
+
+** end of script.js **
+
