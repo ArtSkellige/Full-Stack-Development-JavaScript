@@ -1,0 +1,25 @@
+** start of script.js **
+
+const num = 10;
+
+function factorialCalculator(num) {
+  let result = 1;
+
+  for (let i = 1; i <= num; i++) {
+    result *= i;
+  }
+
+  return result;
+}
+
+// Call the function and store the result
+const factorial = factorialCalculator(num);
+
+// Create the result message
+const resultMsg = `Factorial of ${num} is ${factorial}`;
+
+// Log the msg
+console.log(resultMsg);
+
+** end of script.js **
+
