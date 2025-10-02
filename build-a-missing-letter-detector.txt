@@ -1,0 +1,16 @@
+** start of script.js **
+
+function fearNotLetter(str) {
+  for (let i = 0; i < str.length; i++) {
+    const currentCharCode = str.charCodeAt(i);
+    const expectedCharCode = str.charCodeAt(0) + i;
+    
+    if (currentCharCode !== expectedCharCode) {
+      return String.fromCharCode(expectedCharCode);
+    }
+  }
+  return undefined;
+}
+
+** end of script.js **
+
