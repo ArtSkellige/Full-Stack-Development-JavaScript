@@ -1,0 +1,14 @@
+function theSmallestNumber(TSN)  {
+ const result = [];
+
+for (let rowIndex = 0; rowIndex < TSN.length; rowIndex++) {
+let smallest = TSN[rowIndex][0];
+for (let colIndex = 1; colIndex < TSN[rowIndex].length; colIndex++) {
+if (TSN[rowIndex][colIndex] < smallest) {
+smallest = TSN[rowIndex][colIndex];
+}
+}
+result.push(smallest);
+}
+return result;
+}
