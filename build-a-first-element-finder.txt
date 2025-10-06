@@ -1,0 +1,13 @@
+** start of script.js **
+
+function findElement(Array, Callback) {
+  for (let elementIndex  = 0; elementIndex < Array.length; elementIndex++) {
+    if (Callback(Array[elementIndex])) {
+      return Array[elementIndex];
+    }
+  }
+  return undefined;
+}
+
+** end of script.js **
+
