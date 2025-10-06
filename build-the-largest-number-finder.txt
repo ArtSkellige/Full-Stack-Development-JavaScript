@@ -1,0 +1,18 @@
+** start of script.js **
+
+function largestOfAll(AOA) {
+  const result = [];
+  for (let i = 0; i < AOA.length; i++) {
+    let largest = AOA[i][0];
+    for (let j = 1; j < AOA[i].length; j++) {
+      if (AOA[i][j] > largest) {
+        largest = AOA[i][j];
+      }
+    }
+    result.push(largest);
+  }
+  return result;
+}
+
+** end of script.js **
+
