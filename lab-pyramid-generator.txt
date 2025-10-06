@@ -1,0 +1,24 @@
+** start of script.js **
+
+function pyramid(Char, NumRows, Inverted) {
+  let result = "\n";
+  if (Inverted) {
+    for (let row = NumRows; row >= 1; row--) {
+      let numChars = (2 * row) - 1;
+      let numSpaces = NumRows - row;
+      let rowString = `${" ".repeat(numSpaces)}${Char.repeat(numChars)}\n`;
+      result += rowString;
+    }
+  } else {
+    for (let row = 1; row <= NumRows; row++) {
+      let numChars = (2 * row) - 1;
+      let numSpaces = NumRows - row;
+      let rowString = `${" ".repeat(numSpaces)}${Char.repeat(numChars)}\n`;
+      result += rowString;
+    }
+  }
+  return result;
+}
+
+** end of script.js **
+
