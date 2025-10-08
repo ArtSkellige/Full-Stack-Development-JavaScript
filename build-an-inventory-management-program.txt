@@ -1,0 +1,45 @@
+** start of script.js **
+
+let inventory = [];
+function findProductIndex(Name) {
+  let lowerName = Name.toLowerCase();
+  for (let piIndex = 0; piIndex < inventory.length; piIndex++) {
+    if (inventory[piIndex].name.toLowerCase() === lowerName) {
+      return piIndex;
+    }    
+  }
+  return -1;
+}
+function addProduct(Object) {
+  let lowerName = Object.name.toLowerCase();
+  let index = findProductIndex(lowerName);
+  if (index >= 0) {
+    inventory[index].quantity += Object.quantity;
+    console.log(`${lowerName} quantity updated`);
+  } else {
+    let newProduct = {name: lowerName, quantity: Object.quantity};
+    inventory.push(newProduct);
+    console.log(`${lowerName} added to inventory`);
+  }
+}
+function removeProduct(Name, Quantity) {
+  let lowerName = Name.toLowerCase();
+  let index = findProductIndex(lowerName);
+  if (index === -1) {
+    console.log(`${lowerName} not found`);
+    return;
+  } else {
+    if (inventory[index].quantity >= Quantity) {
+      inventory[index].quantity -= Quantity;
+      console.log(`Remaining ${lowerName} pieces: ${inventory[index].quantity}`);
+      if (inventory[index].quantity === 0) {
+        inventory.splice(index, 1);
+    }
+    } else {
+      console.log(`Not enough ${lowerName} available, remaining pieces: ${inventory[index].quantity}`);
+      }
+  }
+}
+
+** end of script.js **
+
