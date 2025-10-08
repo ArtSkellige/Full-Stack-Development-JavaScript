@@ -1,0 +1,12 @@
+** start of script.js **
+
+function titleCase(Str) {
+  let lowerStr = Str.toLowerCase();
+  let words = lowerStr.split(" ");
+  let titleWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  let result = titleWords.join(" ");
+  return result;
+}
+
+** end of script.js **
+
