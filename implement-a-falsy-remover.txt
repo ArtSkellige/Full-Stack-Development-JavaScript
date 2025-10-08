@@ -1,0 +1,14 @@
+** start of script.js **
+
+function bouncer(Arr) {
+  let truthyArr = [];
+  for (let bouncerIndex = 0; bouncerIndex < Arr.length; bouncerIndex++) {
+    if (Arr[bouncerIndex]) {
+      truthyArr.push(Arr[bouncerIndex])
+    }
+  }
+  return truthyArr;
+}
+
+** end of script.js **
+
