@@ -1,0 +1,18 @@
+** start of script.js **
+
+function uniteUnique(...arr) {
+  let combined = arr.flat();
+  let unique = [];
+  let seen = new Set();
+for (let num of combined) {
+  if (!seen.has(num)) {
+    unique.push(num);
+    seen.add(num);
+    }    
+  }
+    return unique;
+}
+
+
+** end of script.js **
+
