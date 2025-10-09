@@ -1,0 +1,27 @@
+** start of script.js **
+
+function addTogether() {
+  const arg1 = arguments[0];
+  const arg2 = arguments[1];
+  function isValidNumber(val) {
+    return typeof val === "number";
+  }
+  if (!isValidNumber(arg1)) {
+    return undefined;
+  }
+  if (arguments.length === 2) {
+    if (!isValidNumber(arg2)) {
+      return undefined;
+    }
+    return arg1 + arg2;
+  }
+  return function(num) {
+    if (!isValidNumber(num)) {
+      return undefined;
+    }
+    return arg1 + num;
+  }
+}
+
+** end of script.js **
+
