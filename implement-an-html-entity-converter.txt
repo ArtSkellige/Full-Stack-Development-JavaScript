@@ -1,0 +1,12 @@
+** start of script.js **
+
+function convertHTML(str) {
+  const htmlEntities = {"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;"}
+
+return str.replace(/[&<>"']/g, function(match) {
+  return htmlEntities[match];
+})
+}
+
+** end of script.js **
+
