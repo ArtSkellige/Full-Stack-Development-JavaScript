@@ -1,0 +1,22 @@
+** start of script.js **
+
+function pairElement(str) {
+  const pairs = [];
+  for (let indexElement = 0; indexElement < str.length; indexElement++) {
+
+    if (str[indexElement] === "A") {
+      pairs.push(["A", "T"]);
+    } else if (str[indexElement] === "T") {
+      pairs.push(["T", "A"]);
+
+    } else if (str[indexElement] === "C") {
+      pairs.push(["C", "G"]);
+    } else if (str[indexElement] === "G") {
+      pairs.push(["G", "C"]);
+    }
+  }
+    return pairs;
+}
+
+** end of script.js **
+
