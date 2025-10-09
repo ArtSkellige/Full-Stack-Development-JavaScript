@@ -1,0 +1,19 @@
+** start of script.js **
+
+function sumFibs(num) {
+  let prevNum = 0;
+  let currNum = 1;
+  let sum = 0;
+  while (currNum <= num) {
+    if (currNum % 2 === 1) {
+      sum += currNum;
+    }
+    let nextNum = prevNum + currNum;
+    prevNum = currNum;
+    currNum = nextNum;    
+  }
+  return sum;
+}
+
+** end of script.js **
+
