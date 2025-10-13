@@ -1,0 +1,11 @@
+** start of script.js **
+
+function whatIsInAName(arr, src) {
+  const srcKeys = Object.keys(src);
+  return arr.filter(obj => {
+    return srcKeys.every(key => obj[key] === src[key])
+  });
+}
+
+** end of script.js **
+
