@@ -1,0 +1,56 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Favorite Icon Toggler</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>My dream loadout:</h1>
+    <ul class="item-list">
+      <li>
+        RM277 Lonestar <button class="favorite-icon">&#9825;</button>
+      </li>
+      <li>
+        RONIN GEN-12 <button class="favorite-icon">&#9825;</button>
+      </li>
+      <li>
+        Staccato HD P4.5 45 ACP <button class="favorite-icon">&#9825;</button>
+      </li>
+    </ul>
+    <script src="script.js"></script>  
+  </body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+.filled {
+background: linear-gradient(to right, black, white, black);
+color: hotpink;
+}
+
+** end of styles.css **
+
+** start of script.js **
+
+const buttons = document.querySelectorAll(".favorite-icon");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    if (button.classList.contains("filled")) {
+      button.classList.remove("filled");
+      button.innerHTML = "&#9825;";
+    } else {
+      button.classList.add("filled");
+      button.innerHTML = "&#10084;";
+    }
+  });
+});
+
+** end of script.js **
+
