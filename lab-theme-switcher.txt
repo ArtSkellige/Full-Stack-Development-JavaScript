@@ -1,0 +1,108 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switcher</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <button id="theme-switcher-button" aria-haspopup="true" aria-expanded="false" aria-controls="theme-dropdown">Switch Theme</button>
+  <ul id="theme-dropdown" role="menu" aria-labelledby="theme-switcher-button" hidden>
+  <li role="menuitem" id="theme-light">Light</li>
+  <li role="menuitem" id="theme-dark">Dark</li>
+  <li role="menuitem" id="theme-high-contrast">High-Contrast</li>
+  <li role="menuitem" id="theme-greenwood">Greenwood</li>
+  <li role="menuitem" id="theme-dark-fuchsia">Dark-Fuchsia</li>
+</ul>
+<div aria-live="polite">
+
+</div>
+  <script src="./script.js"></script>
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+#status {
+  text-align: center;
+  min-height: 20px;
+}
+
+** end of styles.css **
+
+** start of script.js **
+
+const themes = [
+  {
+    name: "light",
+    message: "Let there be light!☀️"
+  },
+  {
+    name: "dark",
+    message: "Lights out! Dark mode engaged🌙"
+  },
+  {
+    name: "high-contrast",
+    message: "Cranked up the contrast!👓"
+  },
+  {
+    name: "greenwood",
+    message: "Into the woods we go!🌲"
+  },
+  {
+    name: "dark-fuchsia",
+    message: "Pretty in pink... er, dark-fuchsia!🟪⬛️"
+  }
+]
+
+const button = document.getElementById("theme-switcher-button");
+const dropdown = document.getElementById("theme-dropdown");
+
+button.addEventListener("click", () => {
+  dropdown.hidden = !dropdown.hidden;
+
+  button.setAttribute("aria-expanded", dropdown.hidden ? "false" : "true");
+});
+
+const themeItems = document.querySelectorAll('[role="menuitem"]');
+
+themeItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const themeName = item.id.replace("theme-", "");
+    
+    document.body.className = "";
+    
+    document.body.classList.add(`theme-${themeName}`);
+    
+    const selectedTheme = themes.find(theme => theme.name === themeName);
+    
+    const statusElement = document.querySelector(`[aria-live="polite"]`);
+    statusElement.textContent = selectedTheme.message;
+
+    dropdown.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  });
+});
+
+** end of script.js **
+
