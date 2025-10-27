@@ -1,0 +1,11 @@
+** start of script.js **
+
+function spinalCase(str) {
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  str = str.replace(/[\s_-]+/g, '-');
+
+  return str.toLowerCase();
+}
+
+** end of script.js **
+
