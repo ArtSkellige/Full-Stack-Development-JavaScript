@@ -1,0 +1,27 @@
+** start of script.js **
+
+const currentDate = new Date();
+const currentDateFormat = `Current Date and Time: ${currentDate}`;
+console.log(currentDateFormat);
+function formatDateMMDDYYYY(FD) {
+  const formatted = FD.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'numeric',
+    day: '2-digit'
+  });
+
+  return `Formatted Date (MM/DD/YYYY): ${formatted}`;
+}
+
+function formatDateLong(FD) {
+  const formatted = FD.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  return `Formatted Date (Month Day, Year): ${formatted}`;
+}
+
+** end of script.js **
+
