@@ -1,0 +1,20 @@
+** start of script.js **
+
+function permuteString(STR, PV = "", EA = []) {
+  if (STR.length === 0) {
+    EA.push(PV);
+    return EA;
+  }
+
+for (let i = 0; i < STR.length; i++) {
+  const char = STR[i];
+  const remaining = STR.slice(0, i) + STR.slice(i + 1);
+  permuteString(remaining, PV + char, EA);
+}
+
+const uniquePermutations = [...new Set(EA)];
+return uniquePermutations;
+}
+
+** end of script.js **
+
