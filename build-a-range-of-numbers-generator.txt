@@ -1,0 +1,12 @@
+** start of script.js **
+
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) {
+    return [startNum];
+  }
+  const range = rangeOfNumbers(startNum, endNum - 1)
+  return [...range, endNum]
+}
+
+** end of script.js **
+
