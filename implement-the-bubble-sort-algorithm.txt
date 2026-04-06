@@ -1,0 +1,18 @@
+** start of script.js **
+
+function bubbleSort(arr) {
+  let arrSize = arr.length;
+  for (let i = 0; i < arrSize; i++) {
+    for (let j = 0; j < arrSize - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+** end of script.js **
+
