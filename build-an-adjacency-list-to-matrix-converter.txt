@@ -1,0 +1,20 @@
+** start of script.js **
+
+function adjacencyListToMatrix(adjacencyList) {
+  const nodes = Object.keys(adjacencyList).length;
+  const matrix = Array(nodes).fill(null).map(() => {
+    return new Array(nodes).fill(0);
+  });
+  for (const node of Object.keys(adjacencyList)) {
+    for (const neighbor of adjacencyList[node]) {
+      matrix[node][neighbor] = 1;
+    }
+  }
+  for (const row of matrix) {
+    console.log(row);
+  }
+  return matrix;
+}
+
+** end of script.js **
+
