@@ -1,0 +1,28 @@
+** start of script.js **
+
+function dfsNQueens(n) {
+  if (n < 1) return [];
+
+  const solutions = [];
+  const stack = [[]];
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+
+    if (current.length === n) {
+      solutions.push(current);
+    } else {
+      for (let col = 0; col < n; col++) {
+        if (current.every((queenCol, row) => {
+          return queenCol !== col && Math.abs(current.length - row) !== Math.abs(col - queenCol);
+        })) {
+          stack.push([...current, col]);
+        }
+      }
+    }
+  }
+  return solutions.sort();
+}
+
+** end of script.js **
+
