@@ -1,0 +1,106 @@
+** start of script.js **
+
+const playlists = [
+  [
+    {
+      trackId: "trk101",
+      artist: "Velvet Comet",
+      title: "Crimson Afterglow",
+      votes: 5,
+      bpm: 122
+    },
+    {
+      trackId: "trk102",
+      artist: "Neon Harbor",
+      title: "Static Horizon",
+      votes: 2,
+      bpm: 108
+    },
+    {
+      trackId: "trk103",
+      artist: "Lunar Arcade",
+      title: "Midnight Frequency",
+      votes: 4,
+      bpm: 128
+    }
+  ],
+  [
+    {
+      trackId: "trk201",
+      artist: "Solar Echo",
+      title: "Glass Skyline",
+      votes: 3,
+      bpm: 115
+    },
+    {
+      trackId: "trk202",
+      artist: "Velvet Comet",
+      title: "Satellite Hearts",
+      votes: 6,
+      bpm: 124
+    }
+  ]
+];
+function flattenPlaylists(input) {
+  if (!Array.isArray(input)) return [];
+
+  const result = [];
+
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      const track = input[i][j];
+      result.push({
+        ...track,
+        source: [i, j]
+      });
+    }
+  }
+
+  return result;
+}
+
+function scoreTracks(tracks) {
+  return tracks.map(track => ({
+    ...track,
+    score: track.votes * 10 - Math.abs(track.bpm - 120)
+  }));
+}
+
+function dedupeTracks(tracks) {
+  const knownIds = new Set();
+
+  return tracks.filter(track => {
+    if (knownIds.has(track.trackId)) return false;
+    knownIds.add(track.trackId);
+    return true;
+  });
+}
+
+function enforceArtistQuota(tracks, maxPerArtist) {
+  const artistCounts = new Map();
+
+  return tracks.filter(track => {
+    const count = artistCounts.get(track.artist) ?? 0;
+    if (count >= maxPerArtist) return false;
+    artistCounts.set(track.artist, count + 1);
+    return true;
+  });
+}
+
+function buildSchedule(tracks) {
+  return tracks.map((track, index) => ({
+    slot: index + 1,
+    trackId: track.trackId
+  }))
+}
+
+function remixPlaylist(playlists, maxPerArtist) {
+  const flat = flattenPlaylists(playlists);
+  const scored = scoreTracks(flat);
+  const deduped = dedupeTracks(scored);
+  const quota = enforceArtistQuota(deduped, maxPerArtist);
+  return buildSchedule(quota);
+}
+
+** end of script.js **
+
